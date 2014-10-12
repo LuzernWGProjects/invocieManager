@@ -1,15 +1,11 @@
 package ch.InvoiceManager.app.model.database;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.logging.Logger;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.RollbackException;
-
-import org.apache.log4j.Logger;
-
-import ch.feukora.a2.common.app.database.entities.AbstractPerson;
-import ch.feukora.a2.common.app.database.entities.Facility;
 
 /**
  * JPA Implementation des Data Access Objects. 
@@ -50,12 +46,9 @@ public abstract class JpaDao<K, E> implements Dao<K, E> {
 
 		// benoetigt, damit adresse nicht neu erstellt wird, wenn sie bereits
 		// vorhanden ist
-		if (entity instanceof AbstractPerson || entity instanceof Facility) {
-			entityManager.merge(entity);
-		} else {
+		
 			entityManager.persist(entity);
-		}
-
+		
 		entityManager.getTransaction().commit();
 		
 		
