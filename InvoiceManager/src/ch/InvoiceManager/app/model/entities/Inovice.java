@@ -3,6 +3,7 @@
  */
 package ch.InvoiceManager.app.model.entities;
 
+import java.util.List;
 /**
  * @author Oliver
  *
@@ -11,15 +12,15 @@ public class Inovice {
 
 	
 	int id;
-	Service<List> service;
+	List<Service> service;
 	Customer customer;
 	double amount;
 	
 	
-	public Service<List> getService() {
+	public List<Service> getService() {
 		return service;
 	}
-	public void setService(Service<List> service) {
+	public void setService(List<Service> service) {
 		this.service = service;
 	}
 	public Customer getCustomer() {

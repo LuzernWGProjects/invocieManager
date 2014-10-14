@@ -11,14 +11,18 @@
 	
 	
 		<properties>
-		< 	<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
-		 		    <property name="javax.persistence.jdbc.url"	value="jdbc:sqlite:d://sample.db" />
-		 	
-			<property name="javax.persistence.jdbc.user" value="u_14fs_a2" />
-			<property name="javax.persistence.jdbc.password" value="vkDXcw" />
-			<property name="eclipselink.ddl-generation.output-mode"
-				value="database" />
+		
 				
+	<!-- change here if your jdbc driver different -->
+			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
+		    <property name="javax.persistence.jdbc.url"	value="jdbc:sqlite:d://sample.db" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+ 
+			<!-- EclipseLink should create the database schema automatically -->
+			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+		
 			<!-- cache disablen mit eclipse-link property -->
 			<!-- <property name="eclipselink.cache.shared.default" value="false"/> -->
 			<shared-cache-mode>NONE</shared-cache-mode>

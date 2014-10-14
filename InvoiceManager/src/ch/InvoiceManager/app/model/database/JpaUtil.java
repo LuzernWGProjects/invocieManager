@@ -16,7 +16,7 @@ public class JpaUtil {
 	static {
 		try {
 			entityManagerFactory = Persistence
-					.createEntityManagerFactory("hslu_feukora_database");
+					.createEntityManagerFactory("invoiceManager");
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
